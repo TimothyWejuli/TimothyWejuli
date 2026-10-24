@@ -45,3 +45,16 @@ I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs f
 | Configure VMs without RDP | Azure CLI, `az vm run-command` |
 | Join servers and a client to the domain and allow RDP with Group Policy | AD DS, DNS, Group Policy |
 | Verify access as five test users and troubleshoot errors | `whoami`, `nslookup`, `Get-ChildItem`, `New-Item` |
+
+### Azure RBAC Access Control Lab (Azure + Terraform)
+
+[View the project repository](https://github.com/TimothyWejuli/azure-rbac-lab-terraform)
+
+| Focus | Tools and technologies |
+| --- | --- |
+| Assign Owner, Virtual Machine Contributor, and Reader roles scoped to one VM | Azure RBAC, Terraform `azurerm_role_assignment` |
+| Read existing infrastructure instead of recreating it | Terraform data sources |
+| Keep this lab's state separate from Part 1 | Azure Blob Storage remote state, separate state key |
+| Look up Microsoft Entra ID Object IDs for test users | Azure CLI, PowerShell |
+| Validate live role assignments and export a report | PowerShell, `az role assignment list` |
+| Prove least privilege by signing in as each persona | Azure CLI, `AuthorizationFailed` testing |
