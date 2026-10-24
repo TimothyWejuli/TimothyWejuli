@@ -30,3 +30,18 @@ I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs f
 | Require a `CostCenter` tag on resources | Azure Policy |
 | Set a monthly cost budget with an 80% alert | Azure Cost Management budgets |
 | Troubleshoot SKU capacity, hypervisor generation, and state errors | Azure CLI, `terraform plan` / `apply` / `destroy` |
+
+### NTFS File Server Lab (Azure + Terraform)
+
+[View the project repository](https://github.com/TimothyWejuli/ntfs-lab-terraform)
+
+| Focus | Tools and technologies |
+| --- | --- |
+| Deploy a domain controller, file server, and Windows 11 client | Terraform, `azurerm` provider |
+| Store the admin password and Terraform state securely | Azure Key Vault, Azure Blob Storage remote state |
+| Create OUs, security groups, and test users | Active Directory, PowerShell |
+| Create SMB shares on the file server | `New-SmbShare`, SMB |
+| Apply NTFS permissions per department group | `icacls`, NTFS inheritance |
+| Configure VMs without RDP | Azure CLI, `az vm run-command` |
+| Join servers and a client to the domain and allow RDP with Group Policy | AD DS, DNS, Group Policy |
+| Verify access as five test users and troubleshoot errors | `whoami`, `nslookup`, `Get-ChildItem`, `New-Item` |
