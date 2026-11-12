@@ -1,6 +1,6 @@
 # Hi, I'm Timothy Wejuli
 
-I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs focused on Windows Server administration, Active Directory Domain Services (AD DS), ServiceNow ITSM workflows, and PowerShell automation.
+I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs focused on Windows Server administration, Active Directory Domain Services (AD DS), ServiceNow ITSM workflows, patch management, and PowerShell automation.
 
 ## Projects
 
@@ -58,3 +58,19 @@ I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs f
 | Look up Microsoft Entra ID Object IDs for test users | Azure CLI, PowerShell |
 | Validate live role assignments and export a report | PowerShell, `az role assignment list` |
 | Prove least privilege by signing in as each persona | Azure CLI, `AuthorizationFailed` testing |
+
+### Azure Update Manager Patch Management Lab (Azure + Terraform)
+
+[View the project repository](https://github.com/TimothyWejuli/azure-update-manager-lab)
+
+**Business problem:** Unpatched servers are a leading cause of security incidents. At scale, the hard part is knowing which machines are missing which patches, enforcing a consistent schedule, and proving compliance to auditors. This lab replaces the WSUS model with a cloud-native patch pipeline built from zero in Terraform.
+
+| Focus | Tools and technologies |
+| --- | --- |
+| Deploy a domain controller and two domain-joined servers | Terraform modules, `azurerm` provider, AD DS, DNS |
+| Enroll VMs automatically in periodic patch assessment | Azure Policy, managed identity |
+| Schedule a weekly patch window for Critical, Security, and UpdateRollup updates | Azure Update Manager, maintenance configurations |
+| Assign the schedule to each VM with platform patch orchestration | `AutomaticByPlatform` patch mode, maintenance assignments |
+| Run on-demand assessments and find missing updates (4 per server) | Update Manager, `az vm assess-patches` |
+| Validate compliance and export an audit report | PowerShell, `Invoke-AzVMPatchAssessment`, JSON |
+| Troubleshoot vCPU quota limits and VM delete errors | Azure CLI, `terraform plan` / `apply` / `destroy` |
