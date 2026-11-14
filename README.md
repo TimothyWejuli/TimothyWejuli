@@ -1,8 +1,27 @@
 # Hi, I'm Timothy Wejuli
 
-I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs focused on Windows Server administration, Active Directory Domain Services (AD DS), ServiceNow ITSM workflows, patch management, and PowerShell automation.
+I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs focused on Windows Server administration, Active Directory Domain Services (AD DS), security monitoring with a SIEM, ServiceNow ITSM workflows, patch management, PowerShell automation, and infrastructure as code with Terraform on Azure.
 
-## Projects
+## System Administration and Security Labs
+
+Hands-on administration of Windows Server, Active Directory, Linux, and security monitoring tools.
+
+### SIEM Home Lab: Endpoint Detection and Security Monitoring
+
+[View the project repository](https://github.com/TimothyWejuli/siem-home-lab)
+
+**Business problem:** Most breaches leave evidence in logs, like a new admin account nobody requested or a run of failed logons, but those logs sit on individual machines where nobody reads them. This lab builds a central security monitoring pipeline from zero with open-source tools, so suspicious activity triggers an alert within seconds instead of being found weeks later.
+
+| Focus | Tools and technologies |
+| --- | --- |
+| Build a SIEM server on a Linux VM | Ubuntu Server 24.04, VirtualBox, Wazuh 4.14 (indexer, manager, dashboard) |
+| Fix VM networking so endpoints can reach the SIEM | Bridged adapter, `ip a`, `Test-NetConnection` |
+| Administer the server remotely | OpenSSH, PowerShell SSH client, `systemctl` |
+| Enroll a Windows endpoint and forward Security event logs | Wazuh agent, `ossec.conf`, `agent-auth.exe`, `NET START WAZUH` |
+| Simulate attacker account activity and confirm detections | Event IDs 4720, 4732, 4625, 4726, `net user`, `net localgroup` |
+| Triage alerts by severity and map them to MITRE ATT&CK | Wazuh rules, DQL queries, T1136.001, T1098, T1110, T1531 |
+| Review baseline security posture | CIS benchmark (SCA), vulnerability detection |
+| Troubleshoot virtualization, networking, SSH, and agent enrollment | UEFI SVM mode, port tests on 1514/1515, service logs |
 
 ### Active Directory Domain Lab (Azure)
 
@@ -16,6 +35,10 @@ I'm an aspiring System Administrator and Cloud Engineer. I build hands-on labs f
 | Configure Group Policy Objects (GPOs) | Group Policy Management Console |
 | Configure role-based access with security groups | Active Directory security groups |
 | Reset passwords and manage account lifecycles | `Set-ADAccountPassword`, `Disable-ADAccount`, `Enable-ADAccount` |
+
+## Infrastructure as Code and Cloud Labs
+
+Azure environments deployed and managed with Terraform, focused on access control, security, cost governance, and patch management.
 
 ### Virtual Machines and RBAC (Azure + Terraform)
 
