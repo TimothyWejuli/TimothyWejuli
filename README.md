@@ -74,7 +74,7 @@ Hands-on administration of Windows Server, Active Directory, Linux, and security
 
 [View the project repository](https://github.com/TimothyWejuli/siem-home-lab)
 
-**Business problem:** Most breaches leave evidence in logs, like a new admin account nobody requested or a run of failed logons, but those logs sit on individual machines where nobody reads them. This lab builds a central security monitoring pipeline from zero with open-source tools, so suspicious activity triggers an alert within seconds instead of being found weeks later.
+**Business problem:** Most breaches leave evidence in logs, like a new admin account nobody requested or a run of failed logons, but those logs sit on individual machines where nobody reads them. This lab builds a central security monitoring pipeline from zero with open-source tools, so suspicious activity triggers an alert instead of being found weeks later.
 
 | Focus | Tools and technologies |
 | --- | --- |
@@ -83,9 +83,9 @@ Hands-on administration of Windows Server, Active Directory, Linux, and security
 | Administer the server remotely | OpenSSH, PowerShell SSH client, `systemctl` |
 | Enroll a Windows endpoint and forward Security event logs | Wazuh agent, `ossec.conf`, `agent-auth.exe`, `NET START WAZUH` |
 | Simulate attacker account activity and confirm detections | Event IDs 4720, 4732, 4625, 4726, `net user`, `net localgroup` |
-| Triage alerts by severity and map them to MITRE ATT&CK | Wazuh rules, DQL queries, T1136.001, T1098, T1110, T1531 |
+| Triage alerts by severity and review their MITRE ATT&CK technique tags | Wazuh rules, DQL queries, T1136.001, T1098, T1110, T1531 |
 | Review baseline security posture | CIS benchmark (SCA), vulnerability detection |
-| Troubleshoot virtualization, networking, SSH, and agent enrollment | UEFI SVM mode, port tests on 1514/1515, service logs |
+| Troubleshoot virtualization, networking, SSH, and agent enrollment | UEFI SVM mode, port tests on 1514/1515, manual agent enrollment |
 
 ### Active Directory Domain Lab (Azure)
 
